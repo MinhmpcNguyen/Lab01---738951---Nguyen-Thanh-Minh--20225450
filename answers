@@ -1,1 +1,436 @@
+Ex 2.2.5 
+import java.util.Scanner;
+public class calculate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+		double num1 = keyboard.nextDouble();
+		double num2 = keyboard.nextDouble();
+		double sumNum= num1 + num2;
+		System.out.println("The sum is: "+ sumNum);
+		if (num1>num2) {
+			double diffNum =num1-num2;
+			System.out.println("The difference is: "+ diffNum);
+			
+		}
+		else {
+			double diffNum=num2-num1;
+			System.out.println("The difference is: "+ diffNum);
+		}
+		double multiNum=num1*num2;
+		System.out.println("The product is: "+ multiNum);
+		if (num1==0&&num2!=0) {
+			double divNum= 0;
+			System.out.println("num1 divide to num2 is : "+ divNum);
+			System.out.println("num2 divide to num1 is : error ");
+		}
+		if (num1!=0&&num2==0) {
+			double divNum= 0;
+			System.out.println("num2 divide to num1 is : " +divNum);
+			System.out.println("num1 divide to num2 is : error");
+		}
+		if (num1==0&&num2==0) {
+			System.out.println("num1 divide to num2 is : error");
+			System.out.println("num2 divide to num1 is : error");
+			
+		}
+		if (num1!=0&&num2!=0) {
+			double divNum1 = num1/num2;
+			System.out.println("num1 divide to num2 is : "+ divNum1);
+			double divNum2 = num2/num1;
+			System.out.println("num2 divide to num1 is : "+ divNum2);
+		}
+		
+		
+
+	}
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ex 2.2.6
+import java.util.Scanner;
+public class FirstDegreeEquation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+		double a = keyboard.nextDouble();
+		double b = keyboard.nextDouble();
+		double c = keyboard.nextDouble();
+		if (a==0) {
+			System.out.println("Infinity");
+		}
+		else {
+			double x = (c-b)/a;
+			System.out.println("The solution is: " + x);
+		}
+		
+
+	}
+
+}
+import java.util.Scanner;
+public class FirstDegreeEquations {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Enter coefficients for the first equation (a11 a12 b1): ");
+        double a11 = keyboard.nextDouble();
+        double a12 = keyboard.nextDouble();
+        double b1 = keyboard.nextDouble();
+
+        System.out.println("Enter coefficients for the second equation (a21 a22 b2): ");
+        double a21 = keyboard.nextDouble();
+        double a22 = keyboard.nextDouble();
+        double b2 = keyboard.nextDouble();
+        
+        double D = a11 * a22 - a12 * a21;
+        double D1 = b1 * a22 - b2 * a12;
+        double D2 =a11 * b2 - a21 * b1;
+
+        if (D!= 0) {
+            double x1 = D1 / D;
+            double x2 = D2 / D;
+            System.out.println("The solution are :" + x1 + " and "+ x2);
+        }
+        else {
+            
+            if ((a11 / a21) == (a12 / a22) && (a11 / b1) == (a12 / b2)) {
+                
+                System.out.println("Infinitely many solutions");
+            }
+            else {
+                
+                System.out.println("No solution");
+            }
+           
+        }
+
+	}
+
+}
+import java.util.Scanner;
+public class SecondDegreeEquation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+
+        // Input coefficients of the quadratic equation
+        System.out.println("Enter the coefficients of the quadratic equation (a, b, c):");
+        double a = keyboard.nextDouble();
+        double b = keyboard.nextDouble();
+        double c = keyboard.nextDouble();
+        
+        double discriminant = b * b - 4 * a * c;
+        double delta1 = -b +Math.sqrt(discriminant);
+        double delta2 =-b -Math.sqrt(discriminant);
+        
+        if (a == 0) {
+            if (b==0) {
+            	System.out.println("Infinity");
+            }
+            else {
+            	double x = -c/b;
+            	System.out.println("The one real root is: " +x);
+            }
+            
+        } else if (discriminant > 0) {
+            double x1 = delta1 / (2*a);
+            double x2 = delta2 /(2*a);
+            System.out.println("Real roots are: "+ x1 +" and "+ x2);
+        } else if (discriminant == 0) {
+            double x = -b / (2 * a);
+            System.out.println("The one real root is: " +x);
+            
+        } else {
+            System.out.println("No real roots.");
+            }
+	}    
+	}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ex 6.1
+import javax.swing.JOptionPane;
+public class ChoosingOption{
+ public static void main(String[] args){
+
+   int option= JOptionPane.showConfirmDialog(null, "Do you want to change to the first class ticket?");
+
+   JOptionPane.showMessageDialog(null, "You've chosen:"  + (option==JOptionPane. YES_OPTION?"Yes":"No"));
+
+   System.exit(0);
+
+
+}
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ex 6.2
+import java.util.Scanner;
+public class InputFromKeyBoard {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.println("What's your name?");
+		String strName = keyboard.nextLine();
+		System.out.println("How old are you?");
+		int iAge = keyboard.nextInt();
+		System.out.println("How tall are you (m)?");
+		double dHeight = keyboard.nextDouble();
+		
+		System.out.println("Mrs/Ms " + strName +","+iAge+" years old."+" Your height is " + dHeight+".");
+		
+
+	}
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ex 6.3
+import java.util.Scanner;
+public class StarHeight {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+		int n = keyboard.nextInt();
+		for (int i = 1; i<=n;i++) {
+			for (int j =1; j<=(n-i);j++) {
+				System.out.print(" ");
+			}
+			for (int k = 1; k<=2*i-1;k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+			
+			
+			
+		}
+
+	}
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ex 6.4
+import java.util.Scanner;
+
+public class DaysOfMonth {
+
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        
+        int month = 0;
+        int year;
+        
+        
+        System.out.print("Enter the year : ");
+        year = keyboard.nextInt();
+        
+        
+        System.out.print("Enter the month : ");
+        String mon = keyboard.next();
+
+        
+        int a = 0;
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            a = 1;
+        } else {
+            a = 2;
+        }
+        
+        
+        switch (mon) {
+            case "January":
+            case "Jan":
+            case "Jan.":
+            case "1":
+                month = 1;
+                break;
+            case "February":
+            case "Feb":
+            case "Feb.":
+            case "2":
+                month = 2;
+                break;
+            case "March":
+            case "Mar":
+            case "Mar.":
+            case "3":
+                month = 3;
+                break;
+            case "April":
+            case "Apr":
+            case "Apr.":
+            case "4":
+                month = 4;
+                break;
+            case "May":
+            case "May.":
+            case "5":
+                month = 5;
+                break;
+            case "June":
+            case "Jun":
+            case "Jun.":
+            case "6":
+                month = 6;
+                break;
+            case "July":
+            case "Jul":
+            case "Jul.":
+            case "7":
+                month = 7;
+                break;
+            case "August":
+            case "Aug":
+            case "Aug.":
+            case "8":
+                month = 8;
+                break;
+            case "September":
+            case "Sep":
+            case "Sep.":
+            case "9":
+                month = 9;
+                break;
+            case "October":
+            case "Oct":
+            case "Oct.":
+            case "10":
+                month = 10;
+                break;
+            case "November":
+            case "Nov":
+            case "Nov.":
+            case "11":
+                month = 11;
+                break;
+            case "December":
+            case "Dec":
+            case "Dec.":
+            case "12":
+                month = 12;
+                break;
+            default:
+                System.out.println("Invalid month. Please enter a valid month.");
+        }
+        
+        
+        int days = 0;
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                days = 31;
+                break;
+            case 4: case 6: case 9: case 11:
+                days = 30;
+                break;
+            case 2:
+                if (a == 1) {
+                    days = 29;
+                } else {
+                    days = 28;
+                }
+                break;
+            default:
+                System.out.println("Invalid month. Please enter a valid month.");
+        }
+
+        
+        System.out.println("The number of days: " + days);
+        
+        
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ex 6.5
+import java.util.Scanner;
+public class SortedArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+		int n = keyboard.nextInt();
+		int [] arr = new int [n];
+		for (int i = 0; i<n;i++) {
+			arr[i]=keyboard.nextInt();
+		}
+		for (int i = n/2 -1;i>=0;i--) {
+			heapify(arr,n,i);
+		}
+		for (int i = n-1;i>0;i--) {
+			int swap = arr[i];
+			arr[i]=arr[0];
+			arr[0]=swap;
+			heapify(arr,i,0);
+		}
+		
+		
+
+	}
+	public static void heapify(int []arr, int n, int i) {
+		int largest = i;
+		int left = 2*i+1;
+		int right = 2*i+2;
+		if (left<n && arr[left]>arr[largest]) {
+			largest = left;
+		}
+		if (right <n && arr[right]>arr[largest]) {
+			largest = right;
+		}
+		if (largest!=i) {
+			int swap = arr[largest];
+			arr[largest]= arr[i];
+			arr[i]=swap;
+			heapify(arr,n,largest);
+		}
+	}
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ex 6.6
+import java.util.Scanner;
+public class AddMatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+		int m = keyboard.nextInt();
+		int n = keyboard.nextInt();
+		int [][]arr1 = new int [m][n];
+		int [][]arr2 = new int [m][n];
+		int [][]arr3 = new int [m][n];
+		for(int i=0;i<m;i++) {
+			for (int j=0;j<n;j++) {
+				arr1[i][j]= keyboard.nextInt();			
+				}
+		}
+		for(int i=0;i<m;i++) {
+			for (int j=0;j<n;j++) {
+				arr2[i][j]= keyboard.nextInt();			
+				}
+		}
+		for(int i=0;i<m;i++) {
+			for (int j=0;j<n;j++) {
+				arr3[i][j]= arr1[i][j]+arr2[i][j];			
+				}
+		}
+		for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(arr3[i][j] + "\t"); // Use "\t" for space between numbers
+            }
+            System.out.println();
+            System.out.println();
+        }
+		
+		
+
+	}
+
+}
+
+
+
+
 
