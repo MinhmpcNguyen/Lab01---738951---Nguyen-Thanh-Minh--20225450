@@ -1,7 +1,15 @@
 package hust.soict.dsai.aims.screen.manager;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class MediaStore extends JPanel {
     private Media media;
@@ -34,4 +42,3 @@ public class MediaStore extends JPanel {
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
 }
-

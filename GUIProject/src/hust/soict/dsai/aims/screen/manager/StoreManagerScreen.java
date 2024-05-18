@@ -1,4 +1,5 @@
 package hust.soict.dsai.aims.screen.manager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -8,16 +9,17 @@ public class StoreManagerScreen extends JFrame {
 
     public StoreManagerScreen(Store store) {
         this.store = store;
-        
+
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
         cp.add(createNorth(), BorderLayout.NORTH);
         cp.add(createCenter(), BorderLayout.CENTER);
-        
+
         setTitle("Store");
         setSize(1024, 768);
         setLocationRelativeTo(null);
         setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     JPanel createNorth() {
@@ -30,12 +32,24 @@ public class StoreManagerScreen extends JFrame {
 
     JMenuBar createMenuBar() {
         JMenu menu = new JMenu("Options");
-        menu.add(new JMenuItem("View store"));
+        JMenuItem viewStoreItem = new JMenuItem("View store");
+        viewStoreItem.addActionListener(e -> {
+            new StoreManagerScreen(store);
+            dispose();
+        });
+        menu.add(viewStoreItem);
 
         JMenu smUpdateStore = new JMenu("Update Store");
-        smUpdateStore.add(new JMenuItem("Add Book"));
-        smUpdateStore.add(new JMenuItem("Add CD"));
-        smUpdateStore.add(new JMenuItem("Add DVD"));
+        JMenuItem addBookItem = new JMenuItem("Add Book");
+        addBookItem.addActionListener(e -> new AddBookToStoreScreen(store));
+        JMenuItem addCDItem = new JMenuItem("Add CD");
+        addCDItem.addActionListener(e -> new AddCompactDiscToStoreScreen(store));
+        JMenuItem addDVDItem = new JMenuItem("Add DVD");
+        addDVDItem.addActionListener(e -> new AddDigitalVideoDiscToStoreScreen(store));
+        smUpdateStore.add(addBookItem);
+        smUpdateStore.add(addCDItem);
+        smUpdateStore.add(addDVDItem);
+
         menu.add(smUpdateStore);
 
         JMenuBar menuBar = new JMenuBar();
@@ -84,7 +98,6 @@ public class StoreManagerScreen extends JFrame {
         });
     }
 }
-
 class Store {
     private ArrayList<Media> itemsInStore = new ArrayList<>();
 
@@ -97,6 +110,9 @@ class Store {
 
     public ArrayList<Media> getItemsInStore() {
         return itemsInStore;
+    }
+    public void addMedia(Media media) {
+        itemsInStore.add(media);
     }
 }
 
@@ -150,34 +166,3 @@ class DVD extends Media implements Playable {
     }
 }
 
-class MediaStore extends JPanel {
-    private Media media;
-
-    public MediaStore(Media media) {
-        this.media = media;
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
-        JLabel title = new JLabel(media.getTitle());
-        title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 15));
-        title.setAlignmentX(CENTER_ALIGNMENT);
-
-        JLabel cost = new JLabel(media.getCost() + " $");
-        cost.setAlignmentX(CENTER_ALIGNMENT);
-
-        JPanel container = new JPanel();
-        container.setLayout(new FlowLayout(FlowLayout.CENTER));
-
-        if (media instanceof Playable) {
-            JButton playButton = new JButton("Play");
-            container.add(playButton);
-        }
-
-        this.add(Box.createVerticalGlue());
-        this.add(title);
-        this.add(cost);
-        this.add(Box.createVerticalGlue());
-        this.add(container);
-
-        this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-    }
-}
