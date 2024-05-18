@@ -1,0 +1,35 @@
+ Top-Level Containers in Swing and AWT
+
+ AWT:
+- Frame: The primary top-level container in AWT. It represents a window with a title, border, and buttons for closing, minimizing, and maximizing the window.
+- Dialog: A top-level container used to create a dialog window, which is a pop-up window typically used for taking user input.
+
+ Swing:
+- JFrame:The Swing equivalent of Frame, but it provides more functionality and a more flexible framework. JFrame is a lightweight component and part of the javax.swing package.
+- JDialog: The Swing equivalent of Dialog, which also provides more functionality and flexibility. JDialog is also part of the javax.swing package.
+- JApplet: Similar to Applet in AWT but allows for a richer set of user interface components.
+
+
+ Event-Handling in Swing and AWT Applications
+
+ AWT:
+- Event Handling Mechanism: Uses the delegation event model, where an event is delegated to a listener object.
+- Listeners: Common listeners include `ActionListener`, `ItemListener`, `KeyListener`, and `MouseListener`.
+- Event Classes: Events are represented by classes like `ActionEvent`, `ItemEvent`, `KeyEvent`, and `MouseEvent`.
+
+
+ Swing:
+- Event Handling Mechanism: Also uses the delegation event model, but provides more sophisticated and flexible listeners.
+- Listeners: Includes all AWT listeners, and additional listeners such as `ChangeListener` for components like `JSlider` and `JSpinner`.
+- Event Classes: Extends the AWT event classes, adding new event types for additional Swing components.
+
+
+ Differences in Appearance
+
+ AWT:
+- Look and Feel: AWT components are heavyweight, which means they are rendered by the native system's GUI toolkit. This often leads to inconsistent appearance across different platforms.
+- Customization: Limited customization options because the appearance is controlled by the native GUI.
+
+ Swing:
+- Look and Feel: Swing components are lightweight, meaning they are rendered by Java's own painting routines. This provides a consistent appearance across all platforms.
+- Customization: Highly customizable through the use of `UIManager` and `LookAndFeel` classes. Swing supports various themes and styles, and developers can even create their own custom look and feel.
