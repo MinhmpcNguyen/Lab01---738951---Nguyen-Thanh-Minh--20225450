@@ -1,0 +1,17 @@
+Question: 
+- If you create a constructor method to build a DVD by title then create a constructor method to build 
+a DVD by category. Does JAVA allow you to do this? 
+
+Answer: In Java, you can't have multiple constructors with the same parameter types. Therefore, you can't create two constructors for the DigitalVideoDisc class, one takes a title as a parameter and another takes a category as a parameter, because they would have the same parameter type (String). However, you can use constructor overloading. You can have one constructor that takes a title and another constructor that takes a category with different additional parameters to distinguish between them.
+
+Question: Is JAVA a Pass by Value or a Pass by Reference programming language?
+Answer: Java is a pass by value only programming language.
+
+Question: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two 
+objects still remain? 
+Answer : Beacause eventhough the value of two objects inside the swap are changed, these changes are local to the method scope. The original references jungleDVD and cinderellaDVD remain unchanged.
+
+Question: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is 
+the title of the JungleDVD changed? 
+
+Answer: Because we are directly modifying the state of the original object. 
