@@ -1,0 +1,8 @@
+ The Aims class must be updated to handle any exceptions generated when the play() methods are called. What happens when you don’t update for them to catch?
+
+- Uncaught Exceptions: If an exception is not caught, it will propagate up the call stack until a higher-level exception handler catches it.
+- Program Crash: Unhandled exceptions can cause the entire application to crash.
+- Loss of Data: If the program crashes due to an unhandled exception, any unsaved data or state in the application may be lost.
+- Inconsistent State: If an exception occurs and is not properly managed, it can leave the application in an inconsistent or unpredictable state.
+- Poor User Experience: Users may encounter uninformative error messages or experience sudden application closures, leading to frustration and a negative perception of the software.
+- Security Risks: Unhandled exceptions can sometimes reveal internal details about the application, which could be exploited by malicious users to find vulnerabilities or perform attacks.
